@@ -3,10 +3,8 @@ package module2_generics;
 public class Trio<T> {
     T first, second, third;
 
-    public Trio(T item) { 
-        first = item;
-        second = item;
-        third = item;
+    public Trio(T item) {
+        this(item, item, item);
     }
     public Trio(T first, T second, T third) {
         this.first = first;

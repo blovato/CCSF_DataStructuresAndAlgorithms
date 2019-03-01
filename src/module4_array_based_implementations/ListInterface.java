@@ -1,13 +1,10 @@
-package module3_interfaces;
 
-/**
- * * An interface for the ADT list.Entries in a list have positions that begin
- * with 1.
+/** An interface for the ADT list.
+ * Entries in a list have positions that begin with 1.
  *
  * @author Frank M. Carrano
  * @author Timothy M. Henry
  * @version 5.0
- * @param <T>
  */
 public interface ListInterface<T> {
 

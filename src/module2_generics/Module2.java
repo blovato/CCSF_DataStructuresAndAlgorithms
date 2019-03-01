@@ -1,6 +1,7 @@
 package module2_generics;
 
 public class Module2 {
+
     public static void main(String[] args) {
 
         Trio<Integer> numberTrio = new Trio<Integer>(3, 4, 5);
@@ -22,9 +23,9 @@ public class Module2 {
         numberTrio.setItem3(8);
         System.out.println("Item 1 should be 6: " + numberTrio.getItem1());
         System.out.println("Item 2 should be 7: " + numberTrio.getItem2());
-        System.out.println("Item 3 should be 8: " + numberTrio.getItem3());	
+        System.out.println("Item 3 should be 8: " + numberTrio.getItem3());
 
-        System.out.println("\n***TESTING HASDUPLICATES METHOD***");				
+        System.out.println("\n***TESTING HASDUPLICATES METHOD***");
         System.out.println("Trio contains duplicates? false: " + numberTrio.hasDuplicates());
         numberTrio.setItem2(6);
         System.out.println("Trio contains duplicates? true: " + numberTrio.hasDuplicates());
@@ -51,14 +52,13 @@ public class Module2 {
          */
         //wordTrio.setItem2(3);
 
-
-        System.out.println("\n***TESTING CONTAINS METHOD***");			
+        System.out.println("\n***TESTING CONTAINS METHOD***");
         String testString1 = new String("hello");
         String testString2 = new String("HELLO");
         System.out.println("Trio contains how many hello? 1: " + wordTrio.contains(testString1));
         System.out.println("Trio contains how many HELLO? 0: " + wordTrio.contains(testString2));
 
-        System.out.println("\n***TESTING EQUALS METHOD***");		
+        System.out.println("\n***TESTING EQUALS METHOD***");
         Trio<Integer> numberTrio2 = new Trio<Integer>(5, 6, 8);
         Trio<Integer> numberTrio3 = new Trio<Integer>(8, 5, 6);
         System.out.println("Trios the same? true: " + numberTrio2.equals(numberTrio3));
@@ -75,10 +75,6 @@ public class Module2 {
         Trio<String> wordTrio2 = new Trio<String>(new String("a"), new String("b"), new String("c"));
         Trio<String> wordTrio3 = new Trio<String>(new String("a"), new String("b"), new String("c"));
         System.out.println("Trios the same? true: " + wordTrio2.equals(wordTrio3));
-
-
-
-
 
     }
 }

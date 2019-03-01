@@ -2,10 +2,18 @@ package module3_interfaces;
 
 import java.util.*;
 
+/**
+ *
+ * @author brentenlovato
+ */
 public class Module3 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        
+
         System.out.println("******TESTING QUESTION 39: TESTING IF BAG IS A SET");
         BagInterface<String> wordBag = new ArrayBag<>();
         System.out.println("Bag is set? true: " + isSet(wordBag));
@@ -25,17 +33,16 @@ public class Module3 {
         System.out.println("The contents of the bag should be (in ANY order- the order might not match): \n[hi, HI, hello, hi]");
         System.out.println(Arrays.toString(wordBag.toArray()));
 
-
         System.out.println("\n******TESTING QUESTION 41: CREATING SHORT STRING LIST");
         ListInterface<String> wordList = new AList<>();
         wordList.add("ape");
         wordList.add("dog");
-        wordList.add("cockroach"); 
+        wordList.add("cockroach");
         wordList.add("baboon");
         wordList.add("frog");
         wordList.add("spider");
         wordList.add("cat");
-        ListInterface<String> shortWordList = createShortWordList(wordList,4);
+        ListInterface<String> shortWordList = createShortWordList(wordList, 4);
         System.out.println("The contents of the list should be (in THIS ORDER): \n[ape, dog, cat]");
         System.out.println(Arrays.toString(shortWordList.toArray()));
 
@@ -61,9 +68,9 @@ public class Module3 {
         numList1.add(5);
         numList1.add(7);
         ListInterface<Integer> numList2 = new AList<Integer>();
-        System.out.println("Equivalent should be: \nfalse\n" + equivalentLists(numList1, numList2));		
+        System.out.println("Equivalent should be: \nfalse\n" + equivalentLists(numList1, numList2));
         numList2.add(1);
-        System.out.println("Equivalent should be: \nfalse\n" + equivalentLists(numList1, numList2));	
+        System.out.println("Equivalent should be: \nfalse\n" + equivalentLists(numList1, numList2));
         numList2.add(3);
         numList2.add(1);
         numList2.add(5);
@@ -94,10 +101,15 @@ public class Module3 {
         System.out.println("The list should contain: \n[0, 1, 4, 3, 5, 7]\n" + numberList);
     }
 
+    /**
+     *
+     * @param wordBag
+     * @return
+     */
     public static boolean isSet(BagInterface<String> wordBag) {
         boolean isSet = true;
         BagInterface<String> tempBag = new ArrayBag<>();
-        while(!wordBag.isEmpty()) {
+        while (!wordBag.isEmpty()) {
             String item = wordBag.remove();
             int frequency = wordBag.getFrequencyOf(item) + tempBag.getFrequencyOf(item);
             if (frequency > 0) {
@@ -105,12 +117,18 @@ public class Module3 {
             }
             tempBag.add(item);
         }
-        while(!tempBag.isEmpty()) {
+        while (!tempBag.isEmpty()) {
             wordBag.add(tempBag.remove());
         }
         return isSet;
     }
 
+    /**
+     *
+     * @param wordList
+     * @param length
+     * @return
+     */
     public static ListInterface<String> createShortWordList(ListInterface<String> wordList, int length) {
         ListInterface<String> shortList = new AList<>();
         for (int i = 0; i < wordList.getLength(); i++) {
@@ -122,9 +140,15 @@ public class Module3 {
         return shortList;
     }
 
+    /**
+     *
+     * @param wordList
+     * @param targetWord
+     * @return
+     */
     public static int lastPosition(List<String> wordList, String targetWord) {
         int lastIndex = -1;
-        for(int i = 0; i < wordList.size(); i++) {
+        for (int i = 0; i < wordList.size(); i++) {
             if (wordList.get(i).equals(targetWord)) {
                 lastIndex = i;
             }
@@ -132,6 +156,12 @@ public class Module3 {
         return lastIndex;
     }
 
+    /**
+     *
+     * @param numberList
+     * @param numberListInterface
+     * @return
+     */
     public static boolean equivalentLists(List<Integer> numberList, ListInterface<Integer> numberListInterface) {
         int numberListSize = numberList.size();
         int numberListInterfaceSize = numberListInterface.getLength();
@@ -146,8 +176,14 @@ public class Module3 {
         return false;
     }
 
+    /**
+     *
+     * @param numberList
+     */
     public static void prioritizeMinimumValue(List<Integer> numberList) {
-        if (numberList.size() <= 1) return;
+        if (numberList.size() <= 1) {
+            return;
+        }
         Integer currentMin = numberList.get(0);
         for (int i = 1; i < numberList.size(); i++) {
             Integer number = numberList.get(i);

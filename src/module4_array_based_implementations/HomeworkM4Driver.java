@@ -133,17 +133,23 @@ public class HomeworkM4Driver {
 
          */
  
-        BagInterface<Integer> bag = new ArrayBag<>();
-        System.out.println("0 = " + countPositives(bag));
-        System.out.println(Arrays.toString(bag.toArray()));
+//        BagInterface<Integer> bag = new ArrayBag<>();
+//        System.out.println("0 = " + countPositives(bag));
+//        System.out.println(Arrays.toString(bag.toArray()));
+//        bag.add(1);
+//        bag.add(-1);
+//        bag.add(-2);
+//        System.out.println("1 = " + countPositives(bag));
+//        System.out.println(Arrays.toString(bag.toArray()));
+//        bag.add(1);
+//        System.out.println("2 = " + countPositives(bag));
+//        System.out.println(Arrays.toString(bag.toArray()));
+
+        ArrayBag<Integer> bag = new ArrayBag<>();
+        System.out.println(bag.getAnEntry());
         bag.add(1);
-        bag.add(-1);
-        bag.add(-2);
-        System.out.println("1 = " + countPositives(bag));
-        System.out.println(Arrays.toString(bag.toArray()));
-        bag.add(1);
-        System.out.println("2 = " + countPositives(bag));
-        System.out.println(Arrays.toString(bag.toArray()));
+        bag.add(2);
+        System.out.println(bag.getAnEntry());
     }
     
     public static int countPositives(BagInterface<Integer> bag) {

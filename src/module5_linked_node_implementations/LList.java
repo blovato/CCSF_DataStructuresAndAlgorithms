@@ -78,6 +78,20 @@ public class LList<T extends Comparable<? super T>> implements ListInterface<T> 
             numberOfEntries++;
         }
     }
+    
+    public void insertAfterEvery(T listElement, T newElement) {
+        Node currentNode = firstNode;
+        while (currentNode != null) {
+            if (currentNode.data.equals(listElement)) {
+                Node nextNode = currentNode.next;
+                currentNode.next = new Node(newElement, nextNode);
+                numberOfEntries++;
+                currentNode = currentNode.next.next;
+            } else {
+                currentNode = currentNode.next;
+            }
+        }
+    }
 
     public T remove(int givenPosition) {
         T result = null; // Return value

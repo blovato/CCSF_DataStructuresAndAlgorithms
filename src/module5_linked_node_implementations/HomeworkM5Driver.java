@@ -194,17 +194,59 @@ public class HomeworkM5Driver {
 //
 //        recMethod(firstNode);
         
-        LinkedBag<Integer> numbersBag = new LinkedBag<Integer>();
-        numbersBag.add(1);
-        numbersBag.add(2);
-        numbersBag.add(1);
-        numbersBag.add(4);
-        numbersBag.add(3);
-        
-        System.out.println("2 = " + numbersBag.getFrequencyOf(1));
-        System.out.println("1 = " + numbersBag.getFrequencyOf(4));
-        System.out.println("0 = " + numbersBag.getFrequencyOf(9));
+//        LinkedBag<Integer> numbersBag = new LinkedBag<Integer>();
+//        numbersBag.add(1);
+//        numbersBag.add(2);
+//        numbersBag.add(1);
+//        numbersBag.add(4);
+//        numbersBag.add(3);
+//        
+//        System.out.println("2 = " + numbersBag.getFrequencyOf(1));
+//        System.out.println("1 = " + numbersBag.getFrequencyOf(4));
+//        System.out.println("0 = " + numbersBag.getFrequencyOf(9));
 
+//          ListInterface<Integer> list = new LList<>();
+//          list.add(8);
+//          list.add(9);
+//          list.add(6);
+//          list.add(3);
+//          list.add(6);
+//          list.add(6);
+//          System.out.println(recursiveCountMultiples(list, 3));
+//          System.out.println(Arrays.toString(list.toArray()));
+
+//          LList<Integer> list = new LList<>();
+//          list.insertAfterEvery(1, 2);
+//          list.add(2);
+//          list.add(2);
+//          list.add(2);
+//          list.add(2);
+//          list.insertAfterEvery(2, 3);
+//          System.out.println(Arrays.toString(list.toArray()));
+            System.out.println(countMatches(null, 3));
+            Node firstNode = new Node<Integer>(3, new Node<Integer>(3, new Node<Integer>(3, new Node<Integer>(3))));
+            System.out.println(countMatches(firstNode, 3));
+            
+    }
+    
+    public static int countMatches(Node<Integer> node, Integer number) {
+        int count = 0;
+        Node currentNode = node;
+        while (currentNode != null) {
+            if (currentNode.data.equals(number)) count++;
+            currentNode = currentNode.next;
+        }
+        return count;
+    }
+       
+    public static int recursiveCountMultiples(ListInterface<Integer> list, int number) {
+        return recursiveCountMultiplesHelper(list, number, 1, 0);
+    }
+    private static int recursiveCountMultiplesHelper(ListInterface<Integer> list, int number, int currentIndex, int count) {
+        if (currentIndex > list.getLength()) return count;
+        int item = list.getEntry(currentIndex);
+        if (item % number == 0) count++;
+        return recursiveCountMultiplesHelper(list, number, currentIndex + 1, count);
     }
 
     public static void printEveryOther(Node firstNode) {

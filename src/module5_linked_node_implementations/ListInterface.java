@@ -1,3 +1,5 @@
+package module5_linked_node_implementations;
+
 
 /** An interface for the ADT list.
  * Entries in a list have positions that begin with 1.

@@ -1,9 +1,15 @@
 
-import java.util.Arrays;
+import java.util.*;
 
 public class HomeworkM5Driver {
 
     public static void main(String[] args) {
+        Map<String, Integer> numberMap = new HashMap<String, Integer>();
+        numberMap.put("A", 1);
+        numberMap.put("B", 2);
+        numberMap.put("C", 3);
+        System.out.println(numberMap.keySet());
+        
 //
 //        System.out.println("******TESTING QUESTION: COUNT DIVISIBLE");
 //        Node<Integer> firstNode = new Node<Integer>(Integer.valueOf(3),

@@ -1,0 +1,40 @@
+*****TESTING EQUALS AND HASHCODE METHOD IN STUDENT CLASS
+s1 and equiv1 equivalent 	true: true
+s1 and equiv2 equivalent 	true: true
+Same hashCode test1 	2025008814: 2025008814
+Same hashCode test2 	2025008814: 2025008814
+Add s1 		true:  true
+Add s1 again 	false: false
+Add equiv  	false: false
+Add equiv2 	false: false
+
+*****TESTING ADD TO VOTER HASHTABLE
+Added Delta Dem  	true: true
+Added Rita Rep  	true: true
+Added Ida Inde  	true: true
+Added Greta Green  	true: true
+Added Liz Libert  	true: true
+Added Ursula Undec  	true: true
+
+For reference, check where the location of each student should be. Then compare to your table.
+The voters should be in these positions when the table is printed:
+Delta Dem goes in	3
+Rita Rep goes in	1
+Ida Inde goes in	2
+Greta Green goes in	3
+Liz Libert goes in	2
+Ursula Undec goes in	2
+
+1: Rita Rep
+2: Ida Inde -> Liz Libert -> Ursula Undec
+3: Delta Dem -> Greta Green
+
+
+*****TESTING RETRIEVE FROM
+Retreived Delta Dem 	: Delta Dem (912)
+Retreived Rita Rep 	: Rita Rep (670)
+Retreived Ida Inde 	: Ida Inde (381)
+Retreived Greta Green 	: Greta Green (497)
+Retreived Liz Libert 	: Liz Libert (301)
+Retreived Ursula Undec 	: Ursula Undec (541)
+Retrieved Nancy NotAVoter? should be null: null
